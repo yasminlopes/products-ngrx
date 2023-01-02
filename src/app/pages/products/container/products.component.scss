@@ -1,0 +1,41 @@
+@import "/src/assets/styles/tipography";
+@import "/src/assets/styles/colors";
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    a {
+      color: $neutral-01;
+      display: inline-block;
+      padding: 16px 0px;
+      font-size: 1.125rem;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0px;
+        margin-top: 4px;
+        transition: 0.3s;
+        position: absolute;
+        background: $primary-01;
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+    }
+  }
+
+}
