@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Echo Dot",
+      "category": "Smart",
+      "price": 199,
+      "amount": 3
+    }, 
+    {
+      "id": 2,
+      "name": "Headset",
+      "category": "Speakers",
+      "price": 499,
+      "amount": 2
+    }   
+  ]
+}
