@@ -1,0 +1,115 @@
+@import "/src/assets/styles/colors";
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-bottom: 1px solid $neutral-03;
+}
+.container {
+  padding-top: 50px;
+  max-width: 700px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 5px;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+  }
+}
+.content form .product_details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .product_details .input__box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 10px);
+}
+form .input__box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.product_details .input__box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid $neutral-02;
+  background-color: transparent;
+  color: $neutral-01;
+  transition: all 0.3s ease;
+}
+.product_details .input__box input:focus,
+.product_details .input__box input:valid {
+  border-color: $primary-01;
+}
+form .account__details {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+form .button button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  background-color: $primary-01;
+  color: $neutral-01;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+
+  &:hover {
+    background-color: $neutral-03;
+  }
+}
+
+@media (max-width: 584px) {
+  form .product_details .input__box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .product_details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .product_details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+@media (max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
