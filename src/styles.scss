@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/tipography";
+@import "./assets/styles/icons";
+@import "./assets/styles/colors";
+
+body {
+  background-color: $neutral-04;
+  color: $neutral-01;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
