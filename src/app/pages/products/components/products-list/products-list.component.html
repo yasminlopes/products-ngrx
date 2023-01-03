@@ -1,19 +1,17 @@
 <div class="product">
-  <div class="product__content">
-    <ng-container>
-      <div>
-        <span class="product__category">Eletrônico</span>
-        <h1>iPhone XR</h1>
-        <div class="product__detail">
-          <h2>R$ 2400</h2>
-          <span>10</span>
-        </div>
-        <div>
-          <button class="btn-editar">Editar</button>
-          <button class="btn-excluir">Excluir</button>
-        </div>
+  <div class="product__content" *ngFor="let item of listProducts">
+    <div>
+      <span class="product__category">{{ item.category }}</span>
+      <h1>{{ item.name }}</h1>
+      <div class="product__detail">
+        <h2>R$ {{ item.price }}</h2>
+        <span>{{ item.amount }}</span>
       </div>
-      <img src="assets/img/simbol_ipsum.svg" />
-    </ng-container>
+      <div>
+        <button class="btn-editar">Editar</button>
+        <button class="btn-excluir">Excluir</button>
+      </div>
+    </div>
+    <img src="assets/img/simbol_ipsum.svg" />
   </div>
 </div>
