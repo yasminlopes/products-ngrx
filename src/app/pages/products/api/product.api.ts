@@ -15,4 +15,8 @@ export class ProductApi {
   create(product: IProduct): Observable<any> {
     return this.http.post(`${environment.apiUrl}/products`, product);
   }
+
+  delete(id: number) {
+    return this.http.delete(`${environment.apiUrl}/products/${id}`);
+  }
 }

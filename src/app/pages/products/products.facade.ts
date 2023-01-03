@@ -32,4 +32,23 @@ export class ProductsFacade {
       }
     );
   }
+
+  deleteProduct(id: number) {
+    this.api.delete(id).subscribe(
+      (res) => {
+        this.toast.success({
+          detail: 'SUCESSO!',
+          summary: 'Usuário cadastrado com sucesso!',
+          duration: 5000,
+        });
+      },
+      (error) => {
+        this.toast.error({
+          detail: 'Oops..',
+          summary: 'Não foi possível cadastrar.',
+          duration: 5000,
+        });
+      }
+    );
+  }
 }
