@@ -8,8 +8,12 @@
         <span>{{ item.amount }}</span>
       </div>
       <div>
-        <button class="btn-editar">Editar</button>
-        <button class="btn-excluir" (click)="facade.deleteProduct(item.id)">Excluir</button>
+        <button class="btn-editar" (click)="onChange.emit(item.id)">
+          Editar
+        </button>
+        <button class="btn-excluir" (click)="facade.deleteProduct(item.id)">
+          Excluir
+        </button>
       </div>
     </div>
     <img src="assets/img/simbol_ipsum.svg" />

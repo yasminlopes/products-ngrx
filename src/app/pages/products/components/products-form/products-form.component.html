@@ -1,6 +1,6 @@
 <section class="form">
   <div class="container">
-    <div class="container__title">Cadastro</div>
+    <div class="container__title">{{ id ? "Alterar" : "Cadastrar" }}</div>
 
     <div class="content">
       <form [formGroup]="productForm">
@@ -49,7 +49,7 @@
         </div>
 
         <div class="button">
-          <button (click)="save()" [disabled]="productForm.invalid">Adicionar Produto</button>
+          <button (click)="saveForm()" [disabled]="productForm.invalid">{{ id ? "Alterar" : "Adicionar" }} Produto</button>
         </div>
       </form>
     </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProduct } from '../../models/product';
 import { ProductsFacade } from '../../products.facade';
 
@@ -9,6 +9,8 @@ import { ProductsFacade } from '../../products.facade';
 })
 export class ProductsListComponent implements OnInit {
   @Input() public listProducts: IProduct[] | any;
+  @Output() public onChange = new EventEmitter<number>();
+
   constructor(public facade: ProductsFacade) {}
 
   ngOnInit(): void {

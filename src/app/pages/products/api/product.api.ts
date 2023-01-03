@@ -19,4 +19,12 @@ export class ProductApi {
   delete(id: number) {
     return this.http.delete(`${environment.apiUrl}/products/${id}`);
   }
+
+  getProduct(id: number) {
+    return this.http.get(`${environment.apiUrl}/products/${id}`);
+  }
+
+  update(id: number, product: IProduct) {
+    return this.http.put(`${environment.apiUrl}/products/${id}`, product);
+  }
 }
