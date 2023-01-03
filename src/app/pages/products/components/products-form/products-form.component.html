@@ -3,13 +3,14 @@
     <div class="container__title">Cadastro</div>
 
     <div class="content">
-      <form>
+      <form [formGroup]="productForm">
         <div class="product_details">
           <div class="input__box">
             <span class="details">Nome</span>
             <input
               type="text"
               placeholder="Nome do Produto"
+              formControlName="name"
               maxlength="255"
               required
             />
@@ -17,22 +18,38 @@
 
           <div class="input__box">
             <span class="details">Preço</span>
-            <input type="text" placeholder="R$" maxlength="255" required />
+            <input
+              type="text"
+              placeholder="R$"
+              formControlName="price"
+              maxlength="255"
+              required
+            />
           </div>
 
           <div class="input__box">
             <span class="details">Categoria</span>
-            <input type="text" placeholder="Categoria do Produto" required />
+            <input
+              type="text"
+              placeholder="Categoria do Produto"
+              formControlName="category"
+              required
+            />
           </div>
 
           <div class="input__box">
             <span class="details">Quantidade</span>
-            <input type="text" placeholder="Quantidade" required />
+            <input
+              type="text"
+              placeholder="Quantidade"
+              formControlName="amount"
+              required
+            />
           </div>
         </div>
 
         <div class="button">
-          <button>Adicionar Produto</button>
+          <button (click)="save()" [disabled]="productForm.invalid">Adicionar Produto</button>
         </div>
       </form>
     </div>

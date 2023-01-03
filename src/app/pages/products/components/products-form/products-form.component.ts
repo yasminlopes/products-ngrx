@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductsFacade } from '../../products.facade';
 
 @Component({
   selector: 'app-products-form',
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsFormComponent implements OnInit {
 
-  constructor() { }
+  public productForm!: FormGroup;
+  public id: any;
+
+  constructor(
+    private fb: FormBuilder,
+    public facade: ProductsFacade,
+  ) {}
 
   ngOnInit(): void {
+    this.initForm();
   }
+
+  ngOnDestroy() {}
+
+  initForm() {
+    this.productForm = this.fb.group({
+      name: ['', [Validators.required]],
+      category: ['', [Validators.required]],
+      price: ['', [Validators.required]],
+      amount: ['', [Validators.required]]
+    });
+  }
+
+  save() {
+    this.facade.registerProduct(this.productForm.value);
+  }
+
 
 }

@@ -6,13 +6,27 @@
       "category": "Smart",
       "price": 199,
       "amount": 3
-    }, 
+    },
     {
       "id": 2,
       "name": "Headset",
       "category": "Speakers",
       "price": 499,
       "amount": 2
-    }   
+    },
+    {
+      "name": "Capinhas",
+      "category": "Celulares",
+      "price": "15",
+      "amount": "100",
+      "id": 3
+    },
+    {
+      "name": "Películas de Vidro",
+      "category": "Celulares",
+      "price": "30",
+      "amount": "50",
+      "id": 4
+    }
   ]
 }
