@@ -1,27 +1,11 @@
-# ProductsNgrx
+# CRUD de Produtos com NgRx
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+Projeto desenvolvido para prática da implementação do NgRx.
+Esse projeto foi gerado pelo [Angular CLI](https://github.com/angular/angular-cli) na sua versão 14.2.6.
 
-## Development server
+## Como rodar o Projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O projeto simula uma API Rest com JSON Server e tem seus dados armazenados no arquivo db.json que fica na pasta raiz do projeto. Ele roda na porta 3000.
 
-## Code scaffolding
+Inicie o projeto com `npm start`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
