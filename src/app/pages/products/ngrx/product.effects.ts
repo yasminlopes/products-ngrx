@@ -23,4 +23,20 @@ export class ProductsEffects {
       })
     );
   });
+
+  insertProduct$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ProductActions.createProduct),
+      mergeMap((id: any) => {
+        return this.api.create(id).pipe(
+          map(
+            (payload: any) => ProductActions.createProductSuccess({ payload }),
+            catchError((error) =>
+              of(ProductActions.createProductFailure({ error }))
+            )
+          )
+        );
+      })
+    );
+  });
 }
