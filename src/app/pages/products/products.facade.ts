@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { NgToastService } from 'ng-angular-popup';
 import { AppState } from 'src/app/app.state';
 import { ProductApi } from './api/product.api';
-import { IProduct } from './models/product';
+import { Product } from './models/product';
 import { ProductActions } from './ngrx/action.types';
 import { ProductState } from './state/product.state';
 
@@ -19,7 +19,7 @@ export class ProductsFacade {
   ) {}
   public product$ = this.state.product;
 
-  registerProduct(data: IProduct) {
+  registerProduct(data: Product) {
     this.store.dispatch(ProductActions.createProduct({ payload: data }));
   }
 
@@ -46,7 +46,7 @@ export class ProductsFacade {
     return this.api.getProduct(id);
   }
 
-  updateProduct(id: number, product: IProduct) {
+  updateProduct(id: number, product: Product) {
     this.api.update(id, product).subscribe(
       (response) => {
         this.accessList();
@@ -61,12 +61,12 @@ export class ProductsFacade {
     this.router.navigate(['/']);
   }
 
-  save(product: IProduct, id: number) {
+  save(product: Product, id: number) {
     if (product.id) this.updateProduct(id, product);
     this.registerProduct(product);
   }
 
-  saveForm(product: IProduct, id: number) {
+  saveForm(product: Product, id: number) {
     product.id = id;
     if (id) return this.updateProduct(id, product);
     return this.registerProduct(product);

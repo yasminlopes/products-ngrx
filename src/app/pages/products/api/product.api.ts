@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IProduct, ResponseApi } from '../models/product';
+import { Product, ResponseApi } from '../models/product';
 
 @Injectable({ providedIn: 'root' })
 export class ProductApi {
@@ -24,7 +24,7 @@ export class ProductApi {
     return this.http.get(`${environment.apiUrl}/products/${id}`);
   }
 
-  update(id: number, product: IProduct) {
+  update(id: number, product: Product) {
     return this.http.put(`${environment.apiUrl}/products/${id}`, product);
   }
 }

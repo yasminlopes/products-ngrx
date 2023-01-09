@@ -1,10 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { IProduct } from '../../models/product';
+import { Product } from '../../models/product';
 import { ProductActions } from '../action.types';
 
 export interface ProductState {
-  products: IProduct[];
-  product: IProduct | null;
+  products: Product[];
+  product: Product | null;
   error: string | '';
 }
 

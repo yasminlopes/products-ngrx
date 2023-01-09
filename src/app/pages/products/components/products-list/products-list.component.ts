@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IProduct } from '../../models/product';
+import { Product } from '../../models/product';
 import { ProductsFacade } from '../../products.facade';
 import * as ProductsSelector from '../../ngrx/product.selectors';
 import { Observable } from 'rxjs';
@@ -15,7 +15,7 @@ import { ProductActions } from '../../ngrx/action.types';
 export class ProductsListComponent implements OnInit {
   @Output() public onChange = new EventEmitter<number>();
 
-  listProducts$: Observable<IProduct[]> = this.store.select(
+  listProducts$: Observable<Product[]> = this.store.select(
     ProductsSelector.getProducts
   );
 

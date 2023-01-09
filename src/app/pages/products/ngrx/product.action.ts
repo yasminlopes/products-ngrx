@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IProduct } from '../models/product';
+import { Product } from '../models/product';
 
 export const LOAD_ALL_PRODUCTS = '[Products Component] Load All Products';
 export const LOAD_ALL_PRODUCTS_SUCCESS =
@@ -27,7 +27,7 @@ export const DELETE_PRODUCT_FAILURE = '[Delete Product] Delete Product Failure';
 export const loadAllProducts = createAction(LOAD_ALL_PRODUCTS);
 export const loadProductsSuccess = createAction(
   LOAD_ALL_PRODUCTS_SUCCESS,
-  props<{ payload: IProduct[] }>()
+  props<{ payload: Product[] }>()
 );
 export const loadProductsFailure = createAction(
   LOAD_ALL_PRODUCTS_FAILURE,
@@ -41,7 +41,7 @@ export const loadProduct = createAction(
 );
 export const loadProductSuccess = createAction(
   LOAD_PRODUCT_SUCCESS,
-  props<{ payload: IProduct }>()
+  props<{ payload: Product }>()
 );
 export const loadProductFailure = createAction(
   LOAD_PRODUCT_FAILURE,
@@ -51,11 +51,11 @@ export const loadProductFailure = createAction(
 // Create Product
 export const createProduct = createAction(
   CREATE_PRODUCT,
-  props<{ payload: IProduct }>()
+  props<{ payload: Product }>()
 );
 export const createProductSuccess = createAction(
   CREATE_PRODUCT_SUCCESS,
-  props<{ payload: IProduct }>()
+  props<{ payload: Product }>()
 );
 export const createProductFailure = createAction(
   CREATE_PRODUCT_FAILURE,
@@ -65,11 +65,11 @@ export const createProductFailure = createAction(
 // Update Product
 export const updateProduct = createAction(
   UPDATE_PRODUCT,
-  props<{ payload: IProduct }>()
+  props<{ payload: Product }>()
 );
 export const updateProductSuccess = createAction(
   UPDATE_PRODUCT_SUCCESS,
-  props<{ payload: IProduct }>()
+  props<{ payload: Product }>()
 );
 export const updateProductFailure = createAction(
   UPDATE_PRODUCT_FAILURE,
