@@ -15,12 +15,6 @@ export class ProductsFacade {
   ) {}
   public product$ = this.state.product;
 
-  listAllProducts() {
-    this.api.getAllProducts().subscribe((listProducts) => {
-      this.product$.next(listProducts);
-    });
-  }
-
   registerProduct(data: any) {
     this.api.create(data).subscribe(
       (res) => {

@@ -11,7 +11,4 @@
 </header>
 
 <app-products-form></app-products-form>
-<app-products-list
-  [listProducts]="facade.product$ | async"
-  (onChange)="accessForm($event)"
-></app-products-list>
+<app-products-list (onChange)="accessForm($event)"></app-products-list>

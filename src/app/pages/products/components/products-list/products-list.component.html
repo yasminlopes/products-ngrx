@@ -1,5 +1,5 @@
 <div class="product">
-  <div class="product__content" *ngFor="let item of listProducts">
+  <div class="product__content" *ngFor="let item of listProducts$ | async">
     <div>
       <span class="product__category">{{ item.category }}</span>
       <h1>{{ item.name }}</h1>
