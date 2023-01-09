@@ -1,18 +1,18 @@
 {
   "products": [
     {
-      "name": "Echo Dot",
-      "category": "Smart",
-      "price": 199,
-      "amount": "5",
-      "id": 1
+      "name": "Detergente",
+      "category": "Limpeza",
+      "price": "1.99",
+      "amount": "03",
+      "id": 3
     },
     {
-      "name": "Headset",
-      "category": "Speakers",
-      "price": 499,
-      "amount": "1",
-      "id": 2
+      "name": "Televisao",
+      "category": "Eletronico",
+      "price": "2000",
+      "amount": "20",
+      "id": 4
     }
   ]
 }
