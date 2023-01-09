@@ -2,21 +2,21 @@
 
 .product {
   display: flex;
-  flex: wrap;
+  flex-flow: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
 
-  &__content{
+  &__content {
     position: relative;
     background: #fff;
     border-radius: 10px;
     padding: 20px;
-    height: 100%;
-    width: 600px;
     overflow: hidden;
     display: flex;
+    height: 100%;
+    width: 600px;
     align-items: center;
   }
   &__category {
@@ -27,7 +27,7 @@
     border-radius: 50px;
     font-size: 0.7em;
   }
-  &__detail{
+  &__detail {
     display: flex;
     align-items: center;
   }
@@ -36,7 +36,7 @@
 img {
   position: absolute;
   right: -20px;
-  top: -10px
+  top: -10px;
 }
 
 h1 {
@@ -48,7 +48,7 @@ h2 {
   color: #aaa;
 }
 
-span{
+span {
   border-radius: 50px;
   background: $primary-01;
   color: $neutral-01;
@@ -57,7 +57,7 @@ span{
 }
 
 button {
-	margin-top: 10px;
+  margin-top: 10px;
   font-size: 1rem;
   color: $neutral-01;
   padding: 10px 15px;
@@ -68,25 +68,28 @@ button {
   &:hover {
     background-color: $neutral-03;
     color: $neutral-01;
-    	transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
   &:nth-of-type(1) {
     border-radius: 5px 0 0 5px;
     border-right: none;
   }
   &:nth-of-type(2) {
-  	border-radius: 0px 5px 5px 0;
+    border-radius: 0px 5px 5px 0;
   }
 }
 
-.btn-editar{
+.btn-editar {
   background: $alert-01;
 }
 
-.btn-excluir{
+.btn-excluir {
   background: $danger-01;
 }
 
-
-
-
+@media screen and (max-width: 400px) {
+  img {
+    width: 50%;
+    top: 10px;
+  }
+}

@@ -13,6 +13,20 @@
       "price": "2000",
       "amount": "20",
       "id": 4
+    },
+    {
+      "name": "teste",
+      "category": "teste",
+      "price": 45.45,
+      "amount": "05",
+      "id": 5
+    },
+    {
+      "name": "test",
+      "category": "test",
+      "price": 454.54,
+      "amount": "454",
+      "id": 6
     }
   ]
 }
