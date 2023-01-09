@@ -7,11 +7,12 @@ import { NgToastModule } from 'ng-angular-popup';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routing';
 import { ProductsModule } from './pages/products/products.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { appEffects, appReducer } from './app.state';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
@@ -19,8 +20,10 @@ import { ProductsModule } from './pages/products/products.module';
     HttpClientModule,
     FormsModule,
     NgToastModule,
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot(appEffects),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
