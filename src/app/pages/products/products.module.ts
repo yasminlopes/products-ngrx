@@ -5,18 +5,21 @@ import { ProductsComponent } from './container/products.component';
 import { productsRoutes } from './products.routing';
 import { ProductsFormComponent } from './components/products-form/products-form.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
-import { NgToastModule } from 'ng-angular-popup';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(productsRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxCurrencyModule,
   ],
-  declarations: [ProductsComponent, ProductsFormComponent, ProductsListComponent],
+  declarations: [
+    ProductsComponent,
+    ProductsFormComponent,
+    ProductsListComponent,
+  ],
 })
 export class ProductsModule {}
-
-
