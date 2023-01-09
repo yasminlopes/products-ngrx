@@ -14,9 +14,8 @@ export const initialState: ProductState = {
   error: '',
 };
 
-export const usersReducer = createReducer(
+export const productsReducer = createReducer(
   initialState,
-  // All Users
   on(ProductActions.loadProductsSuccess, (state, action) => {
     return { ...state, products: action.payload, error: '' };
   }),
