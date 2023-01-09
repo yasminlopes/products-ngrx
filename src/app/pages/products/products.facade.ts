@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { NgToastService } from 'ng-angular-popup';
+import { AppState } from 'src/app/app.state';
 import { ProductApi } from './api/product.api';
 import { IProduct } from './models/product';
+import { ProductActions } from './ngrx/action.types';
 import { ProductState } from './state/product.state';
 
 @Injectable({ providedIn: 'root' })
@@ -11,27 +14,13 @@ export class ProductsFacade {
     private api: ProductApi,
     private state: ProductState,
     private toast: NgToastService,
-    private router: Router
+    private router: Router,
+    private store: Store<AppState>
   ) {}
   public product$ = this.state.product;
 
-  registerProduct(data: any) {
-    this.api.create(data).subscribe(
-      (res) => {
-        this.toast.success({
-          detail: 'SUCESSO!',
-          summary: 'Usuário cadastrado com sucesso!',
-          duration: 5000,
-        });
-      },
-      (error) => {
-        this.toast.error({
-          detail: 'Oops..',
-          summary: 'Não foi possível cadastrar.',
-          duration: 5000,
-        });
-      }
-    );
+  registerProduct(data: IProduct) {
+    this.store.dispatch(ProductActions.createProduct({ payload: data }));
   }
 
   deleteProduct(id: number) {

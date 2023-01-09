@@ -1,32 +1,7 @@
 {
   "products": [
     {
-      "name": "Detergente",
-      "category": "Limpeza",
-      "price": "1.99",
-      "amount": "03",
-      "id": 3
-    },
-    {
-      "name": "Televisao",
-      "category": "Eletronico",
-      "price": "2000",
-      "amount": "20",
-      "id": 4
-    },
-    {
-      "name": "teste",
-      "category": "teste",
-      "price": 45.45,
-      "amount": "05",
-      "id": 5
-    },
-    {
-      "name": "test",
-      "category": "test",
-      "price": 454.54,
-      "amount": "454",
-      "id": 6
+      "id": 2
     }
   ]
 }
