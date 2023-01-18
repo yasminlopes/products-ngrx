@@ -32,28 +32,8 @@ export class ProductsFacade {
   }
 
   updateProduct(id: number, product: Product) {
-    this.api.update(id, product).subscribe(
-      (response) => {
-        this.accessList();
-      },
-      (error) => {
-        console.log('error');
-      }
+    this.store.dispatch(
+      ProductActions.updateProduct({ payload: { ...product, id } })
     );
-  }
-
-  accessList() {
-    this.router.navigate(['/']);
-  }
-
-  save(product: Product, id: number) {
-    if (product.id) this.updateProduct(id, product);
-    this.registerProduct(product);
-  }
-
-  saveForm(product: Product, id: number) {
-    product.id = id;
-    if (id) return this.updateProduct(id, product);
-    return this.registerProduct(product);
   }
 }
