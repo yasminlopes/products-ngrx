@@ -31,5 +31,17 @@ export const productsReducer = createReducer(
   }),
   on(ProductActions.createProductFailure, (state, action) => {
     return { ...state, error: action.error };
+  }),
+  on(ProductActions.deleteProductSuccess, (state, action) => {
+    return {
+      ...state,
+      products: [...state.products].filter(
+        (filter) => filter.id != action.payload
+      ),
+      error: '',
+    };
+  }),
+  on(ProductActions.deleteProductFailure, (state, action) => {
+    return { ...state, error: action.error };
   })
 );
