@@ -20,11 +20,37 @@ export class ProductsFacade {
   public product$ = this.state.product;
 
   registerProduct(product: Product) {
-    this.store.dispatch(ProductActions.createProduct({ payload: product }));
+    try {
+      this.store.dispatch(ProductActions.createProduct({ payload: product }));
+      this.toast.success({
+        detail: 'Sucesso',
+        summary: 'Produto cadastrado com sucesso!',
+        duration: 3000,
+      });
+    } catch (error) {
+      this.toast.error({
+        detail: 'Oops...',
+        summary: 'Ocorreu um erro ao cadastrar o produto.',
+        duration: 3000,
+      });
+    }
   }
 
   deleteProduct(id: number) {
-    this.store.dispatch(ProductActions.deleteProduct({ payload: id }));
+    try {
+      this.store.dispatch(ProductActions.deleteProduct({ payload: id }));
+      this.toast.success({
+        detail: 'Sucesso',
+        summary: 'Produto deletado com sucesso!',
+        duration: 3000,
+      });
+    } catch (error) {
+      this.toast.error({
+        detail: 'Oops...',
+        summary: 'Ocorreu um erro ao deletar o produto.',
+        duration: 3000,
+      });
+    }
   }
 
   selectById(id: number) {
@@ -32,9 +58,22 @@ export class ProductsFacade {
   }
 
   updateProduct(id: number, product: Product) {
-    this.store.dispatch(
-      ProductActions.updateProduct({ payload: { ...product, id } })
-    );
+    try {
+      this.store.dispatch(
+        ProductActions.updateProduct({ payload: { ...product, id } })
+      );
+      this.toast.success({
+        detail: 'Sucesso',
+        summary: 'Produto atualizado com sucesso!',
+        duration: 3000,
+      });
+    } catch (error) {
+      this.toast.error({
+        detail: 'Oops...',
+        summary: 'Ocorreu um erro ao atualizado o produto.',
+        duration: 3000,
+      });
+    }
   }
 
   save(product: Product, id: number) {

@@ -1,18 +1,11 @@
 {
   "products": [
     {
-      "name": "TESTE",
-      "category": "teste",
-      "price": 0.5,
-      "amount": "1000",
-      "id": 2
-    },
-    {
-      "name": "teste",
-      "category": "teste",
-      "price": 4424.24,
-      "amount": "44",
-      "id": 3
+      "name": "Mouse",
+      "category": "Informática",
+      "price": 45.9,
+      "amount": "20",
+      "id": 1
     }
   ]
 }
