@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.state';
 import { ProductsFacade } from '../../products.facade';
+import * as ProductsSelector from '../../ngrx/product.selectors';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-products-form',
@@ -15,7 +19,8 @@ export class ProductsFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     public facade: ProductsFacade,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private store: Store<AppState>
   ) {}
 
   ngOnInit(): void {
@@ -40,14 +45,21 @@ export class ProductsFormComponent implements OnInit {
   }
 
   fillForm() {
-    if (this.id) {
-      this.facade.selectById(+this.id).subscribe(
-        (res) => {
-          this.productForm.patchValue(res);
-        },
-        (error) => console.log(error)
-      );
-    }
+    if (!this.id) return;
+
+    this.facade.selectById(this.id);
+    this.store
+      .pipe(
+        select(ProductsSelector.getProduct),
+        map((product: any) => this.selectProduct(product))
+      )
+      .subscribe((product: any) => {
+        this.productForm.patchValue(product);
+      });
+  }
+
+  selectProduct(product: any) {
+    if (product) return product;
   }
 
   saveForm() {
