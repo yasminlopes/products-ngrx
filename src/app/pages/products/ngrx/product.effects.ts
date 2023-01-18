@@ -58,4 +58,20 @@ export class ProductsEffects {
       })
     );
   });
+
+  loadProduct$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ProductActions.loadProduct),
+      mergeMap((id: any) => {
+        return this.api.getProduct(id.payload).pipe(
+          map(
+            (payload: any) => ProductActions.loadProductSuccess({ payload }),
+            catchError((error) =>
+              of(ProductActions.loadProductFailure({ error }))
+            )
+          )
+        );
+      })
+    );
+  });
 }
