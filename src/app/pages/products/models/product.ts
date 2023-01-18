@@ -2,12 +2,10 @@ export interface ResponseApi {
   data: Product;
 }
 
-export class Product {
-  constructor(
-    public id: number,
-    public name: string,
-    public category: number,
-    public price: number,
-    public amount: number
-  ) {}
+export interface Product {
+  id: number;
+  name: string;
+  category: number;
+  price: number;
+  amount: number;
 }
