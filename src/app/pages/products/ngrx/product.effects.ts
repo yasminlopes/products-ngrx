@@ -39,4 +39,23 @@ export class ProductsEffects {
       })
     );
   });
+
+  deleteProduct$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ProductActions.deleteProduct),
+      mergeMap((id: any) => {
+        return this.api.delete(id.payload).pipe(
+          map(
+            () =>
+              ProductActions.deleteProductSuccess({
+                payload: id.payload,
+              }),
+            catchError((error) =>
+              of(ProductActions.deleteProductFailure({ error }))
+            )
+          )
+        );
+      })
+    );
+  });
 }
