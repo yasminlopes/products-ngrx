@@ -6,10 +6,9 @@ import { ProductsFacade } from '../../products.facade';
 @Component({
   selector: 'app-products-form',
   templateUrl: './products-form.component.html',
-  styleUrls: ['./products-form.component.scss']
+  styleUrls: ['./products-form.component.scss'],
 })
 export class ProductsFormComponent implements OnInit {
-
   public productForm!: FormGroup;
   public id: any;
 
@@ -20,19 +19,23 @@ export class ProductsFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.queryParamMap.get('id');
+    this.returnProductId();
     this.initForm();
     this.fillForm();
   }
 
   ngOnDestroy() {}
 
+  returnProductId() {
+    this.id = this.route.snapshot.queryParamMap.get('id');
+  }
+
   initForm() {
     this.productForm = this.fb.group({
       name: ['', [Validators.required]],
       category: ['', [Validators.required]],
       price: ['', [Validators.required]],
-      amount: ['', [Validators.required]]
+      amount: ['', [Validators.required]],
     });
   }
 
@@ -51,5 +54,4 @@ export class ProductsFormComponent implements OnInit {
     this.facade.saveForm(this.productForm.value, this.id);
     this.productForm.reset();
   }
-
 }
