@@ -43,5 +43,11 @@ export const productsReducer = createReducer(
   }),
   on(ProductActions.deleteProductFailure, (state, action) => {
     return { ...state, error: action.error };
+  }),
+  on(ProductActions.loadProductSuccess, (state, action) => {
+    return { ...state, product: action.payload, error: '' };
+  }),
+  on(ProductActions.loadProductFailure, (state, action) => {
+    return { ...state, error: action.error };
   })
 );
