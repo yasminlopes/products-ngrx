@@ -36,4 +36,9 @@ export class ProductsFacade {
       ProductActions.updateProduct({ payload: { ...product, id } })
     );
   }
+
+  save(product: Product, id: number) {
+    id ? this.updateProduct(id, product) : this.registerProduct(product);
+    this.router.navigate(['/']);
+  }
 }

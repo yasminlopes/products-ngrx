@@ -63,7 +63,7 @@ export class ProductsFormComponent implements OnInit {
   }
 
   saveForm() {
-    this.facade.saveForm(this.productForm.value, this.id);
+    this.facade.save(this.productForm.value, this.id);
     this.productForm.reset();
   }
 }
