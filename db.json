@@ -1,6 +1,10 @@
 {
   "products": [
     {
+      "name": "TESTE",
+      "category": "teste",
+      "price": 0.5,
+      "amount": "1000",
       "id": 2
     }
   ]

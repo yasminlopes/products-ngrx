@@ -13,7 +13,7 @@ export class ProductApi {
   }
 
   create(product: ResponseApi): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/products`, product.data);
+    return this.http.post(`${environment.apiUrl}/products`, product);
   }
 
   delete(id: number) {

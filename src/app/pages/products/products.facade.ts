@@ -19,8 +19,23 @@ export class ProductsFacade {
   ) {}
   public product$ = this.state.product;
 
-  registerProduct(data: Product) {
-    this.store.dispatch(ProductActions.createProduct({ payload: data }));
+  registerProduct(data: any) {
+    this.api.create(data).subscribe(
+      (res) => {
+        this.toast.success({
+          detail: 'SUCESSO!',
+          summary: 'Produto cadastrado com sucesso!',
+          duration: 5000,
+        });
+      },
+      (error) => {
+        this.toast.error({
+          detail: 'Oops..',
+          summary: 'Não foi possível cadastrar.',
+          duration: 5000,
+        });
+      }
+    );
   }
 
   deleteProduct(id: number) {
@@ -28,7 +43,7 @@ export class ProductsFacade {
       (res) => {
         this.toast.success({
           detail: 'SUCESSO!',
-          summary: 'Usuário cadastrado com sucesso!',
+          summary: 'Produto cadastrado com sucesso!',
           duration: 5000,
         });
       },
