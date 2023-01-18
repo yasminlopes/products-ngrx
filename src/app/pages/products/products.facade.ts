@@ -28,7 +28,7 @@ export class ProductsFacade {
   }
 
   selectById(id: number) {
-    return this.api.getProduct(id);
+    return this.store.dispatch(ProductActions.loadProduct({ payload: id }));
   }
 
   updateProduct(id: number, product: Product) {
