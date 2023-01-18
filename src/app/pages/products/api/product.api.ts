@@ -24,7 +24,10 @@ export class ProductApi {
     return this.http.get(`${environment.apiUrl}/products/${id}`);
   }
 
-  update(id: number, product: Product) {
-    return this.http.put(`${environment.apiUrl}/products/${id}`, product);
+  update(product: Product) {
+    return this.http.put(
+      `${environment.apiUrl}/products/${product.id}`,
+      product
+    );
   }
 }

@@ -74,4 +74,20 @@ export class ProductsEffects {
       })
     );
   });
+
+  updateUser$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ProductActions.updateProduct),
+      mergeMap((data: any) => {
+        return this.api.update(data.payload).pipe(
+          map(
+            (payload: any) => ProductActions.updateProductSuccess({ payload }),
+            catchError((error) =>
+              of(ProductActions.updateProductFailure({ error }))
+            )
+          )
+        );
+      })
+    );
+  });
 }
