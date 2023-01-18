@@ -27,10 +27,10 @@ export class ProductsEffects {
   insertProduct$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(ProductActions.createProduct),
-      mergeMap((id: any) => {
-        return this.api.create(id).pipe(
+      mergeMap(({ payload }) => {
+        return this.api.create(payload).pipe(
           map(
-            (payload: any) => ProductActions.createProductSuccess({ payload }),
+            (data) => ProductActions.createProductSuccess({ payload }),
             catchError((error) =>
               of(ProductActions.createProductFailure({ error }))
             )

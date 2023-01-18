@@ -12,7 +12,7 @@ export class ProductApi {
     return this.http.get(`${environment.apiUrl}/products`);
   }
 
-  create(product: ResponseApi): Observable<any> {
+  create(product: Product): Observable<any> {
     return this.http.post(`${environment.apiUrl}/products`, product);
   }
 
