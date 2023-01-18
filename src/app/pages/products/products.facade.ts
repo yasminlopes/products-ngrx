@@ -19,23 +19,8 @@ export class ProductsFacade {
   ) {}
   public product$ = this.state.product;
 
-  registerProduct(data: any) {
-    this.api.create(data).subscribe(
-      (res) => {
-        this.toast.success({
-          detail: 'SUCESSO!',
-          summary: 'Produto cadastrado com sucesso!',
-          duration: 5000,
-        });
-      },
-      (error) => {
-        this.toast.error({
-          detail: 'Oops..',
-          summary: 'Não foi possível cadastrar.',
-          duration: 5000,
-        });
-      }
-    );
+  registerProduct(product: Product) {
+    this.store.dispatch(ProductActions.createProduct({ payload: product }));
   }
 
   deleteProduct(id: number) {
