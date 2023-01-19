@@ -9,3 +9,10 @@ O projeto simula uma API Rest com JSON Server e tem seus dados armazenados no ar
 
 Inicie o projeto com `npm start`
 
+## Tecnologias e metodologias utilizadas
+
+- Angular
+- NgRx
+- Facade
+
+## Imagens do Projeto
